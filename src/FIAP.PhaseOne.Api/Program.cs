@@ -41,23 +41,5 @@ app.Services.CreateScope().ServiceProvider.UpdateMigrate();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-var httpRequestsByStatus = Metrics.CreateCounter("http_requests_by_status", 
-    "Total de requisições HTTP por status de resposta", 
-    new CounterConfiguration
-    {
-        LabelNames = new[] { "status_code" }
-    });
-
-app.Use(async (context, next) =>
-{
-    await next();
-
-    // Obtenha o status da resposta
-    var statusCode = context.Response.StatusCode.ToString();
-
-    // Incremente o contador com o status da resposta
-    httpRequestsByStatus.WithLabels(statusCode).Inc();
-});
-
 app.UseRouting();
 app.Run();
