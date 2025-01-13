@@ -90,7 +90,7 @@ namespace FIAP.PhaseOne.Tests.Presentation
             var result = await client.PutAsync($"api/contacts/{id}", content);
 
             // Assert
-            Assert.Equal(HttpStatusCode.NoContent, result.StatusCode); // Mudado para NoContent, pois o controller retorna NoContent
+            Assert.Equal(HttpStatusCode.NoContent, result.StatusCode); 
         }
 
         [Fact]
