@@ -43,3 +43,5 @@ app.UseSwaggerUI();
 
 app.UseRouting();
 app.Run();
+
+public partial class Program { }
