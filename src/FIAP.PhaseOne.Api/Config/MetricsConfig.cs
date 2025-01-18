@@ -12,6 +12,8 @@ namespace FIAP.PhaseOne.Api.Config
             var gauge_memory = meter.CreateObservableGauge<long>("memory_application", () => Process.GetCurrentProcess().WorkingSet64);
             var test_metric = meter.CreateCounter<long>("metric_counter");
             var gauge_cpu = meter.CreateObservableGauge<double>("cpu_usage", () => GetCpuUsage());
+            var requestDuration = meter.CreateHistogram<double>("http_request_duration_seconds", "Histogram for tracking API response times.");
+
             services.AddOpenTelemetry()
             .WithMetrics(x =>
             {
@@ -22,6 +24,7 @@ namespace FIAP.PhaseOne.Api.Config
                 x.AddConsoleExporter();
                 x.AddPrometheusExporter();
             });
+
             return services;
         }
         private static double GetCpuUsage()
