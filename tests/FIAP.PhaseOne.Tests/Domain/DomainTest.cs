@@ -1,6 +1,6 @@
 ﻿using Bogus;
 
-namespace FIAP.PhaseOne.Tests.Shared;
+namespace FIAP.PhaseOne.Tests.Domain;
 
 public abstract class DomainTest
 {

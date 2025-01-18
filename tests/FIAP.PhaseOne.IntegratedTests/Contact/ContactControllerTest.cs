@@ -9,16 +9,18 @@ using System.Threading.Tasks;
 using FIAP.PhaseOne.Api.Dto;
 using FIAP.PhaseOne.Application.Handlers.Commands.AddContact;
 using FIAP.PhaseOne.Domain.ContactAggregate;
+using FIAP.PhaseOne.IntegratedTests;
+using FIAP.PhaseOne.Tests.Application;
 using FIAP.PhaseOne.Tests.Domain.Mock;
 using Google.Protobuf.WellKnownTypes;
 
 namespace FIAP.PhaseOne.Tests.Presentation
 {
-    public class ContactControllerTest : ApplicationTest, IClassFixture<PhaseOneWebApplicationFactory>
+    public class ContactControllerTest : IntegrationTest, IClassFixture<WebApplicationFactory>
     {
-        private readonly PhaseOneWebApplicationFactory app;
+        private readonly WebApplicationFactory app;
 
-        public ContactControllerTest(PhaseOneWebApplicationFactory app)
+        public ContactControllerTest(WebApplicationFactory app)
         {
             this.app = app;
         }
@@ -97,7 +99,7 @@ namespace FIAP.PhaseOne.Tests.Presentation
         public async Task PUT_UpdateContact_WhenContactNotFound_ReturnsNotFound()
         {
             // Arrange
-            var app = new PhaseOneWebApplicationFactory();
+            var app = new WebApplicationFactory();
             var client = app.CreateClient();
             var nonExistentId = Guid.NewGuid(); // Gera um ID que não existe
 
@@ -141,7 +143,7 @@ namespace FIAP.PhaseOne.Tests.Presentation
         public async Task DELETE_DeleteContact_WhenContactNotFound_ReturnsNotFound()
         {
             // Arrange
-            var app = new PhaseOneWebApplicationFactory();
+            var app = new WebApplicationFactory();
             var client = app.CreateClient();
             var nonExistentId = Guid.NewGuid(); // Gera um ID que não existe
 

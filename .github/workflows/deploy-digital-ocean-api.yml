@@ -30,7 +30,10 @@ jobs:
       run: dotnet build --no-restore --configuration Release
 
     - name: Run unit tests
-      run: dotnet test --no-build --configuration Release 
+      run: dotnet test ./FIAP.PhaseOne.UnitTests/FIAP.PhaseOne.UnitTests.csproj --no-build --configuration Release 
+
+    - name: Run integration tests
+      run: dotnet test ./FIAP.PhaseOne.IntegrationTest/FIAP.PhaseOne.IntegrationTest.csproj --no-build --configuration Release
 
     - name: Login to DigitalOcean Container Registry
       run: echo "${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}" | docker login -u doctl --password-stdin registry.digitalocean.com

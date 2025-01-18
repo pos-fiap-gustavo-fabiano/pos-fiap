@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIAP.PhaseOne.Application",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{48C605F9-2D97-4A7A-926F-563C89F5BFC1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIAP.PhaseOne.Tests", "tests\FIAP.PhaseOne.Tests\FIAP.PhaseOne.Tests.csproj", "{69529AE1-C686-42CD-91D9-C145EA093863}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIAP.PhaseOne.UnitTest", "tests\FIAP.PhaseOne.Tests\FIAP.PhaseOne.UnitTest.csproj", "{69529AE1-C686-42CD-91D9-C145EA093863}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIAP.PhaseOne.IntegrationTest", "tests\FIAP.PhaseOne.IntegratedTests\FIAP.PhaseOne.IntegrationTest.csproj", "{F9C8FA84-F921-4CC3-A860-419F21CDFD2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{69529AE1-C686-42CD-91D9-C145EA093863}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69529AE1-C686-42CD-91D9-C145EA093863}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69529AE1-C686-42CD-91D9-C145EA093863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9C8FA84-F921-4CC3-A860-419F21CDFD2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9C8FA84-F921-4CC3-A860-419F21CDFD2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9C8FA84-F921-4CC3-A860-419F21CDFD2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9C8FA84-F921-4CC3-A860-419F21CDFD2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{8B69E8FB-ADB5-48FB-B780-B6AA554257FB} = {D179D27A-BE0D-4043-94BE-20EBAD35385C}
 		{72B04458-9CFC-42A7-8226-74091CEB23AD} = {DD9AE758-3B9A-460A-B47A-276A2584CBEC}
 		{69529AE1-C686-42CD-91D9-C145EA093863} = {48C605F9-2D97-4A7A-926F-563C89F5BFC1}
+		{F9C8FA84-F921-4CC3-A860-419F21CDFD2B} = {48C605F9-2D97-4A7A-926F-563C89F5BFC1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B216E5B-400E-4411-A95A-F64FDB479B2E}

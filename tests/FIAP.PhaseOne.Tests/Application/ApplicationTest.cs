@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using System.Reflection;
 
-namespace FIAP.PhaseOne.Tests.Shared;
+namespace FIAP.PhaseOne.Tests.Application;
 
 public abstract class ApplicationTest
 {

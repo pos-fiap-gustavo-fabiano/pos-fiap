@@ -4,16 +4,17 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.VisualStudio.TestPlatform.TestHost;
 
-namespace FIAP.PhaseOne.Tests.Shared
+namespace FIAP.PhaseOne.IntegratedTests
 {
-    public class PhaseOneWebApplicationFactory : WebApplicationFactory<Program>
+    public class WebApplicationFactory : WebApplicationFactory<Program>
     {
-        public ApplicationDbContext Context { get;}
+        public ApplicationDbContext Context { get; }
         private IServiceScope scope;
-        public PhaseOneWebApplicationFactory()
+        public WebApplicationFactory()
         {
-            this.scope = Services.CreateScope();
+            scope = Services.CreateScope();
             Context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
         }
         protected override void ConfigureWebHost(IWebHostBuilder builder)
