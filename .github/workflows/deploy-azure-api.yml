@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-    - main
+    - maindesativado
 
 env:
   AZURE_WEBAPP_NAME: phase2
