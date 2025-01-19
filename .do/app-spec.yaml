@@ -17,7 +17,6 @@ services:
   - key: ConnectionStrings__Default
     scope: RUN_AND_BUILD_TIME
     value: Host=ep-frosty-star-a5yudl6r.us-east-2.aws.neon.tech;Port=5432;Database=phase-one;Username=phase-one_owner;Password=ZwLjAxC0RnS5
-
   http_port: 8080
   image:
     deploy_on_push:
